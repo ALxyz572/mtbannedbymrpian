@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT Banned by Mr Pian</title>
+    <style>
+        /* Background bisa diatur sendiri */
+        body {
+            background: url('https://files.catbox.moe/ncj2gh.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Posisi tombol di tengah */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        /* Gaya tombol */
+        .btn {
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+            transition: 0.3s;
+        }
+
+        /* Efek nyala saat tombol ditekan */
+        .btn:active {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+        }
+
+        /* Tulisan MT Banned by Mr Pian */
+        .footer {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        /* Bagian teks */
+        .content-section {
+            display: none;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 0, 0, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+            text-align: left;
+            white-space: pre-wrap;
+        }
+
+        /* Tombol Salin */
+        .copy-btn {
+            background-color: red;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+        }
+
+        .copy-btn:active {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+        }
+
+        /* Tombol kembali */
+        .back-btn {
+            background-color: gray;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <!-- Pemutar Musik Seram -->
+    <audio autoplay loop>
+        <source src="https://files.catbox.moe/g4bral.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <!-- Halaman utama dengan tombol -->
+    <div class="container" id="main-page">
+        <button class="btn" onclick="showText('text1')">Teks 1</button>
+        <button class="btn" onclick="showText('text2')">Teks 2</button>
+        <button class="btn" onclick="showText('text3')">Teks 3</button>
+    </div>
+
+    <!-- Halaman teks -->
+    <div id="text1" class="content-section">
+        <h2>Halaman Teks 1</h2>
+        <div id="content1">
+hola soy Hajrbi, soy muy famoso en España como un psicópata 👿👿 al que le gusta matar 🔪👹 y violar a menores🤤🤤😋 También vendo varios órganos como fuente de ingresos😋💸💸
+
+https://xgore.net/besar-orang-tak-berlahan-terkill-dalam-war-antara-pasukan-government-dan-pemberontak/
+
+También vendo videos porno.
+1 vídeo: 40 EUROS
+2 vídeos :50 EUROS
+5 vídeos : 100 EUROS
+
+¿Quieres ver mi vídeo?
+https://api.whatsapp.com/send?phone=+
+        </div>
+        <button class="copy-btn" onclick="copyText('content1')">Salin Teks</button>
+        <button class="back-btn" onclick="goBack()">Kembali</button>
+    </div>
+
+    <div id="text2" class="content-section">
+        <h2>Halaman Teks 2</h2>
+        <div id="content2">
+            Ini adalah teks ketiga. Teks ini bisa memuat banyak informasi tanpa ada batasan panjang.
+        </div>
+        <button class="copy-btn" onclick="copyText('content2')">Salin Teks</button>
+        <button class="back-btn" onclick="goBack()">Kembali</button>
+    </div>
+
+    <div id="text3" class="content-section">
+        <h2>Halaman Teks 3</h2>
+        <div id="content3">
+            Ini adalah teks ketiga. Teks ini bisa memuat banyak informasi tanpa ada batasan panjang.
+        </div>
+        <button class="copy-btn" onclick="copyText('content3')">Salin Teks</button>
+        <button class="back-btn" onclick="goBack()">Kembali</button>
+    </div>
+
+    <!-- Tulisan Banned -->
+    <div class="footer">MT Banned by Mr Pian</div>
+
+    <script>
+        function showText(sectionId) {
+            document.getElementById("main-page").style.display = "none";
+            document.getElementById(sectionId).style.display = "block";
+        }
+
+        function goBack() {
+            document.getElementById("main-page").style.display = "flex";
+            document.querySelectorAll(".content-section").forEach(section => {
+                section.style.display = "none";
+            });
+        }
+
+        function copyText(contentId) {
+            var text = document.getElementById(contentId).innerText;
+            var tempInput = document.createElement("textarea");
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            alert("Teks berhasil disalin!");
+        }
+    </script>
+</body>
+</html>
